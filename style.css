@@ -1,0 +1,205 @@
+@font-face {
+    font-family: "nosy";
+    src: url("./fonts/nosy.otf") format("opentype") /*truetype*/;
+}
+
+@font-face {
+    font-family: "open";
+    src: url("./fonts/open.otf") format("opentype") /*truetype*/;
+}
+
+body {
+    font-family: open;
+    letter-spacing: 1px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+h2{
+    font-family: nosy;
+    font-size: 2.5rem;
+}
+
+.contenedor {
+    background: #ffffff69;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px #ff8f25;
+    text-align: center;
+    width: 90%;
+    max-width: 400px;
+}
+
+.output {
+    margin-bottom: 20px;
+}
+
+#claveGenerada {
+    width: 70%;
+    padding: 8px;
+}
+
+input[type="range"] {
+    /* removing default appearance */
+    -webkit-appearance: none;
+    appearance: none;
+    /* creating a custom design */
+    width: 80%;
+    cursor: pointer;
+    outline: none;
+    /*  slider progress trick  */
+    overflow: hidden;
+    border-radius: 16px;
+}
+
+input[type="range"]::-webkit-slider-runnable-track {
+    height: 15px;
+    background: #ccc;
+    border-radius: 16px;
+}
+
+/* Thumb: webkit */
+input[type="range"]::-webkit-slider-thumb {
+    /* removing default appearance */
+    -webkit-appearance: none;
+    appearance: none;
+    /* creating a custom design */
+    height: 15px;
+    width: 15px;
+    background-color: #fff;
+    border-radius: 50%;
+    border: 2px solid #ec8e21;
+    /*  slider progress trick  */
+    box-shadow: -407px 0 0 400px #e4a444;
+}
+
+button {
+    background-color: #e4a444;
+    border: none;
+    padding: 10px;
+    color: white;
+    margin-top: 10px;
+    cursor: pointer;
+    border-radius: 6px;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #d37f1e;
+}
+
+.config {
+    text-align: center;
+    margin: 20px 0;
+}
+
+.gradient-background {
+    background: linear-gradient(300deg, #f3e851, #f3b251, #f38151, #f35151);
+    background-size: 240% 240%;
+    animation: gradient-animation 24s ease infinite;
+}
+
+@keyframes gradient-animation {
+    0% {
+        background-position: 0% 50%;
+    }
+
+    25% {
+        background-position: 50% 100%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+
+    100% {
+        background-position: 50% 0%;
+    }
+}
+
+#snackbar {
+    visibility: hidden;
+    /* Hidden by default. Visible on click */
+    min-width: 250px;
+    /* Set a default minimum width */
+    background-color: #333333c5;
+    /* Black background color */
+    color: #fff;
+    /* White text color */
+    text-align: center;
+    /* Centered text */
+    border-radius: 2px;
+    /* Rounded borders */
+    padding: 16px;
+    /* Padding */
+    position: fixed;
+    /* Sit on top of the screen */
+    margin-left: 0.2%;
+    z-index: 1;
+    /* Add a z-index if needed */
+    bottom: 30px;
+    /* 30px from the bottom */
+}
+
+#snackbar.show {
+    visibility: visible;
+    /* Show the snackbar */
+    -webkit-animation: fadein 0.5s, fadeout 0.5s 2.5s;
+    animation: fadein 0.5s, fadeout 0.5s 2.5s;
+}
+
+/* Animations to fade the snackbar in and out */
+@-webkit-keyframes fadein {
+    from {
+        bottom: 0;
+        opacity: 0;
+    }
+
+    to {
+        bottom: 30px;
+        opacity: 1;
+    }
+}
+
+@keyframes fadein {
+    from {
+        bottom: 0;
+        opacity: 0;
+    }
+
+    to {
+        bottom: 30px;
+        opacity: 1;
+    }
+}
+
+@-webkit-keyframes fadeout {
+    from {
+        bottom: 30px;
+        opacity: 1;
+    }
+
+    to {
+        bottom: 0;
+        opacity: 0;
+    }
+}
+
+@keyframes fadeout {
+    from {
+        bottom: 30px;
+        opacity: 1;
+    }
+
+    to {
+        bottom: 0;
+        opacity: 0;
+    }
+}
+
+input[type="checkbox"] {
+    accent-color: #d37f1e;
+}
