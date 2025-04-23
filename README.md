@@ -1,3 +1,3 @@
-# generador_contrasenas
+# generador de contraseñas
 
 Hola profe
