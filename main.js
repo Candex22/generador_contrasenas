@@ -108,10 +108,10 @@ document.getElementById("toggleTheme").addEventListener("click", function() {
     
     if (html.getAttribute("data-theme") === "dark") {
         html.setAttribute("data-theme", "light");
-        themeButton.textContent = "🌑"; // Luna para cambiar a modo oscuro
+        themeButton.textContent = "💜"; // Luna para cambiar a modo oscuro
     } else {
         html.setAttribute("data-theme", "dark");
-        themeButton.textContent = "☀️"; // Sol para cambiar a modo claro
+        themeButton.textContent = "🧡"; // Sol para cambiar a modo claro
     }
 });
 
