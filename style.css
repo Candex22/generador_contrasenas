@@ -8,6 +8,26 @@
     src: url("./fonts/open.otf") format("opentype") /*truetype*/;
 }
 
+:root {
+    --primary-color: #e4a444;
+    --primary-hover: #d37f1e;
+    --text-color: #333;
+    --background-light: #ffffff69;
+    --shadow-color: #ff8f25;
+    --container-bg: #ffffff69;
+    --input-bg: #fff;
+}
+
+[data-theme="dark"] {
+    --primary-color: #9b59b6;
+    --primary-hover: #8e44ad;
+    --text-color: #f0f0f0;
+    --background-light: #2f2f2f69;
+    --shadow-color: #9b59b6;
+    --container-bg: #2f2f2f69;
+    --input-bg: #1a1a1a;
+}
+
 body {
     font-family: open;
     letter-spacing: 1px;
@@ -16,18 +36,19 @@ body {
     align-items: center;
     height: 100vh;
     margin: 0;
+    color: var(--text-color);
 }
 
-h2{
+h2 {
     font-family: nosy;
     font-size: 2.5rem;
 }
 
 .contenedor {
-    background: #ffffff69;
+    background: var(--container-bg);
     padding: 30px;
     border-radius: 10px;
-    box-shadow: 0 0 10px #ff8f25;
+    box-shadow: 0 0 10px var(--shadow-color);
     text-align: center;
     width: 90%;
     max-width: 400px;
@@ -40,6 +61,17 @@ h2{
 #claveGenerada {
     width: 70%;
     padding: 8px;
+    background-color: var(--input-bg);
+    color: var(--text-color);
+    border: 1px solid var(--primary-color);
+}
+
+input[type="text"] {
+    background-color: var(--input-bg);
+    color: var(--text-color);
+    border: 1px solid var(--primary-color);
+    padding: 8px;
+    border-radius: 4px;
 }
 
 input[type="range"] {
@@ -69,15 +101,15 @@ input[type="range"]::-webkit-slider-thumb {
     /* creating a custom design */
     height: 15px;
     width: 15px;
-    background-color: #fff;
+    background-color: var(--input-bg);
     border-radius: 50%;
-    border: 2px solid #ec8e21;
+    border: 2px solid var(--primary-color);
     /*  slider progress trick  */
-    box-shadow: -407px 0 0 400px #e4a444;
+    box-shadow: -407px 0 0 400px var(--primary-color);
 }
 
 button {
-    background-color: #e4a444;
+    background-color: var(--primary-color);
     border: none;
     padding: 10px;
     color: white;
@@ -88,7 +120,7 @@ button {
 }
 
 button:hover {
-    background-color: #d37f1e;
+    background-color: var(--primary-hover);
 }
 
 .config {
@@ -96,8 +128,16 @@ button:hover {
     margin: 20px 0;
 }
 
-.gradient-background {
+/* Tema claro - fondo gradient naranja */
+html[data-theme="light"] .gradient-background {
     background: linear-gradient(300deg, #f3e851, #f3b251, #f38151, #f35151);
+    background-size: 240% 240%;
+    animation: gradient-animation 24s ease infinite;
+}
+
+/* Tema oscuro - fondo gradient violeta */
+html[data-theme="dark"] .gradient-background {
+    background: linear-gradient(300deg, #b060e9, #834bb8, #8011af, #2c083d);
     background-size: 240% 240%;
     animation: gradient-animation 24s ease infinite;
 }
@@ -201,5 +241,37 @@ button:hover {
 }
 
 input[type="checkbox"] {
-    accent-color: #d37f1e;
+    accent-color: var(--primary-color);
+}
+
+/* Estilos para la sección de palabras clave */
+.palabras-clave-option {
+    margin-top: 15px;
+}
+
+.palabras-clave-campo {
+    margin-top: 10px;
+}
+
+.palabras-clave-campo input {
+    width: 90%;
+    margin-top: 5px;
+}
+
+/* Botón de cambio de tema */
+.theme-toggle {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+}
+
+.theme-toggle button {
+    font-size: 1.5rem;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0;
 }
